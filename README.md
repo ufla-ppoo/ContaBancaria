@@ -43,7 +43,7 @@ A classe que representa as contas passará a ter os dados do seu titular.
 Para isso, vamos primeiro criar uma nova classe para representar um cliente.
 Tal classe deve ter:
 
-- Atributos nome e CPF (pode ser do tipo `String` mesmo).
+- Atributos nome e CPF (podem ser do tipo `String` mesmo).
 - Métodos para consultar o nome e o CPF do cliente.
 - Lembrando que esta classe também não deve ter nenhuma interação com o usuário.
 
@@ -54,7 +54,7 @@ Altere a classe que representa a conta bancária para que ela tenha um atributo 
 Por fim, altere a classe que representa o caixa eletrônico para que:
 
 - Na criação de contas, obtenha do usuário o nome e o CPF do cliente, crie o objeto correspondente, e utilize-o para criar a conta.
-- Na opção de consultar saldo, seja exibido o nome do titular da conta junto com o saldo (cuidado com o encapsulamento!).
+- Na opção de consultar saldo, seja exibido o nome do titular da conta junto com o saldo.
 
 Teste suas implementações!
 
@@ -70,7 +70,7 @@ Altere então a classe do caixa eletrônico para que existam duas opções difer
 - Uma que pede para o usuário o saldo inicial e outra que não pede.
 - Cada opção deve chamar o construtor correspondente.
 
-Como o operador `this` poderia ser utilizado em um dos construtores? (Dica: veja os slides de revisão dos conceitos de OO).
+Como o operador `this` poderia ser utilizado em um dos construtores para evitar replicação de código? (Dica: veja os slides de revisão dos conceitos de OO).
 
 Teste suas implementações!
 
