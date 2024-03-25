@@ -19,7 +19,9 @@ Lembre-se de usar adequadamente os modificadores de visibilidade (`public` ou `p
 ## Passo 2 - Representando um caixa eletrônico
 
 Crie também uma outra classe que represente um Caixa Eletrônico.
-Nesta classe, por enquanto, crie um atributo para guardar uma única conta.
+Nesta classe, por enquanto, crie um atributo para guardar uma única conta
+(dica: siga exatamente o que pede o enunciado, portanto, não crie vetor nem ArrayList de contas).
+
 Em seguida implemente um menu com as opções abaixo (implemente métodos separados para tratar cada opção).
 
 ```
