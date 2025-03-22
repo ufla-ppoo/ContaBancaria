@@ -2,7 +2,23 @@
 
 Este exercício é dado na parte de revisão de Conceitos Básicos de Orientação a Objetos da disciplina GAC106 - Práticas de Programação Orientada a Objetos.
 
-Basta seguir os passos relatados a seguir.
+Basta seguir os passos apresentados a seguir.
+
+## Orientações Gerais
+
+- Você deve fazer um passo de cada vez, testá-lo, fazer o commit e enviar suas alterações.
+Somente depois disso é que você deve passar para o próximo passo.
+
+- **ATENÇÃO**: **desligue o GitHub Copilot para fazer o exercício!**
+  - Se você utilizá-lo você não estará realmente exercitando os conceitos aprendidos e
+    não terá o domínio adequado para desenvolver as habilidades necessárias para se tornar
+	um bom programador/desenvolvedor.
+  - Sem contar ainda a questão do plágio.
+  - Os exercícios trazem exemplos de código em Java, e você também pode consultar os
+    slides das aulas teóricas de revisão.
+
+- Esse arquivo README pode ser melhor visualizado no VS Code (com formatação adequada) 
+  abrindo-o no modo de visualização. Para isso, basta apertar Ctrl+Sfhit+V com ele aberto.
 
 ## Passo 1 - Representando uma conta bancária
 
@@ -10,19 +26,25 @@ Esse e os próximos exercícios se referem às operações de uma conta bancári
 Nesse primeiro passo, crie uma classe para representar uma conta bancária, que atenda às necessidades abaixo.
 Lembre-se de usar adequadamente os modificadores de visibilidade (`public` ou `private`) dos atributos e métodos.
 
-- As contas devem possuir um saldo e um limite.
-- Deve existir um método para consultar o saldo.
+- As contas devem possuir o nome do titular da conta, um saldo e um limite.
+- Devem existir métodos para consultar o nome do titular e o saldo.
 - Devem existir métodos para saque e para depósito de valores na conta.
 - A conta pode ter saldo negativo no máximo até o limite estabelecido.
-- A classe não deve ter nenhuma interação com o usuário (ou seja, dentro dela não deve existir exibição de mensagens, nem leitura de dados).
+  - Exemplo: se o limite da conta for R$ 500, significa que o saldo pode chegar ao valor mínimo de -R$ 500.
+- A classe não deve ter nenhuma interação com o usuário (ou seja, dentro dela não deve existir exibição de mensagens, nem obtenção de dados do usuário).
+
+Neste passo ainda não é possível testar o seu código.
+De todo modo, ao terminar, faça o commit e sincronize as suas alterações (use `passo1` no comentário do commit).
+
+- Obs.: se precisar fazer novo commit com alguma correção, use o comentário `passo1 - correções`.
 
 ## Passo 2 - Representando um caixa eletrônico
 
-Crie também uma outra classe que represente um Caixa Eletrônico.
+Crie agora uma outra classe que represente um Caixa Eletrônico.
 Nesta classe, por enquanto, crie um atributo para guardar uma única conta
-(dica: siga exatamente o que pede o enunciado, portanto, não crie vetor nem ArrayList de contas).
+(**dica**: siga exatamente o que pede o enunciado, portanto, não crie vetor nem ArrayList de contas nesse passo).
 
-Em seguida implemente um menu com as opções abaixo (implemente métodos separados para tratar cada opção).
+Em seguida implemente um menu com as opções abaixo e implemente métodos separados para tratar cada opção.
 
 ```
 1. Criar Conta
@@ -34,37 +56,17 @@ Em seguida implemente um menu com as opções abaixo (implemente métodos separa
 
 Por fim, altere a classe que tem o método `main`, para que nele seja criado um objeto da classe que representa o caixa eletrônico e dispare a execução do menu.
 
-- Dica 1: lembre-se de há um exemplo de implementação de menu no gabarito do exercício prático da aula passada.
+- Dica 1: lembre-se de há um exemplo de implementação de menu no Campus Virtual (repositório Carro).
 - Dica 2: repare que se o usuário acessar as opções que alteram a conta, antes da conta ser criada, ocorrerá um erro de `NullPointerException`. Podemos facilmente evitar esse problema, verificando primeiro se o atributo que representa a conta é diferente de `null` (e informando apropriadamente ao usuário).
 
-Teste suas implementações!
+Teste suas alterações!
+Depois, faça o commit e sincronize suas alterações (use `passo2` no comentário do commit).
 
-## Passo 3 - Representando um cliente
-
-A classe que representa as contas passará a ter os dados do seu titular.
-Para isso, vamos primeiro criar uma nova classe para representar um cliente.
-Tal classe deve ter:
-
-- Atributos nome e CPF (podem ser do tipo `String` mesmo).
-- Métodos para consultar o nome e o CPF do cliente.
-- Lembrando que esta classe também não deve ter nenhuma interação com o usuário.
-
-## Passo 4 - Tratando titular da conta
-
-Altere a classe que representa a conta bancária para que ela tenha um atributo do tipo cliente, e altere o construtor da classe de forma que ele receba um objeto cliente por parâmetro.
-
-Por fim, altere a classe que representa o caixa eletrônico para que:
-
-- Na criação de contas, obtenha do usuário o nome e o CPF do cliente, crie o objeto correspondente, e utilize-o para criar a conta.
-- Na opção de consultar saldo, seja exibido o nome do titular da conta junto com o saldo.
-
-Teste suas implementações!
-
-## Passo 5 - Construtores
+## Passo 3 - Sobrecarga de construtores
 
 Altere a classe que representa as contas bancárias de forma que ela passe a ter dois construtores.
 
-- Os dois construtores devem receber o cliente e o valor do limite da conta.
+- Os dois construtores devem receber o nome do titular da conta e o valor do limite da conta.
 - E apenas um deles deve receber o valor do saldo inicial da conta. Portanto, no outro construtor o saldo deve ser inicializado com zero.
 
 Altere então a classe do caixa eletrônico para que existam duas opções diferentes de criação de contas.
@@ -74,35 +76,43 @@ Altere então a classe do caixa eletrônico para que existam duas opções difer
 
 Como o operador `this` poderia ser utilizado em um dos construtores para evitar replicação de código? (Dica: veja os slides de revisão dos conceitos de OO).
 
-Teste suas implementações!
+Teste suas alterações!
+Depois, faça o commit e sincronize suas alterações.
 
-## Passo 6 - Numeração das contas
+## Passo 4 - Numeração automática de contas
 
 Neste passo, a ideia é que as contas bancárias tenham um novo atributo para guardar o número da conta e um método que retorne essa informação.
 
 Nós poderíamos receber o número de cada conta no construtor e deixar a classe do caixa eletrônico definir a numeração.
-Mas é mais interessante se a própria classe que representa as contas tratar automaticamnete a numeração, utilizando o conceito de atributo estático.
+Mas é mais interessante se a própria classe que representa as contas tratar automaticamente a numeração, utilizando o conceito de atributo estático.
 
 Para isso, crie um atributo estático na classe que representa as contas para guardar o número da última conta criada (inicialmente ele deve ter o valor 100).
 Repare que são dois atributos diferentes:
 
-- Um é o número da conta que é diferente para cada conta (atributo comum).
+- Um é o número da conta em si que é diferente para cada conta (atributo comum).
 - E o outro é um atributo estático que indica o número da última conta criada (atibuto estático, que tem o mesmo valor para todas as contas).
 
-No construtor da classe que representa as contas o atributo estático deve ser incrementado, e o seu valor deve ser usado como número da conta que está sendo criada.
+No construtor da classe que representa as contas:
+- o atributo estático deve ser incrementado, 
+- e o seu valor deve ser usado como número da conta que está sendo criada.
 
-## Passo 7 - Tratando mais de uma conta
+Teste suas alterações!
+Depois, faça o commit e sincronize suas alterações.
 
-Na classe que trata o caixa eletrônico, crie mais um atributo para que ela passe então a tratar duas contas bancárias.
+## Passo 5 - Tratando várias contas
 
-- Na opção de menu de criar contas, trate para que o usuário forneça os dados das duas contas.
-- Após a criação de cada conta, o programa deve exibir o número gerado para cada conta de forma que o usuário saiba o número que deve usar nas demais operações.
+Na classe que trata o caixa eletrônico, crie um atributo para guardar uma coleção de contas (pode ser um vetor ou um ArrayList).
+- Essa coleção deve substituir o atributo criado no passo 2 para guardar uma única conta.
 
-Lembre-se também de alterar as demais opções de menu (consultar saldo, saque e depósito), pois o usuário terá agora que informar o número da conta com a qual ele quer tratar.
+- Na opção de menu de criar contas, uma nova conta deve ser criada e acrescentada na coleção.
+- Após a criação de uma conta, o programa deve exibir o número gerado para a conta de forma que o usuário saiba o número que deve usar nas demais operações.
+- Acrescente uma opção de menu chamada `Exibir contas` que exibe o número e o nome do titular de todas as contas.
+- E, claro, lembre-se também de alterar as demais opções de menu (consultar saldo, saque e depósito), pois o usuário terá agora que informar o número da conta sobre a qual deseja operar.
 
-Teste suas implementações!
+Teste suas alterações!
+Depois, faça o commit e sincronize suas alterações.
 
-## Passo 8 - Transferência entre contas
+## Passo 6 - Transferência entre contas
 
 Agora que conseguimos criar contas diferentes, podemos fazer transferências entre elas.
 Crie um método na classe que representa as contas para realizar a transferência entre duas contas.
@@ -115,9 +125,10 @@ Na classe que representa o caixa eletrônico, crie uma opção de menu para tran
 
 - O usuário deverá escolher qual será a conta de origem e qual será a conta de destino (de acordo com os números das contas).
 
-Teste suas implementações!
+Teste suas alterações!
+Depois, faça o commit e sincronize suas alterações.
 
-## (Opcional) Passo 9 - Rendimento na conta
+## Passo 7 - Rendimento na conta
 
 Suponha que nossa conta é especial e possui um rendimento periódico.
 Para tratá-lo faça o seguinte:
@@ -126,8 +137,14 @@ Para tratá-lo faça o seguinte:
 - Crie um método `render` que aplica a taxa de rendimento ao saldo da conta. Avalie se tal método deve ser estático ou não.
 - Pro fim, crie uma opção de menu na classe que representa o caixa eletrônico para que o usuário possa fazer a conta render.
 
-## (Opcional) Passo 10 - Alterando rendimento
+Teste suas alterações!
+Depois, faça o commit e sincronize suas alterações.
+
+## Passo 8 - Alterando rendimento
 
 Crie um método na classe que representa as contas para alterar a taxa de rendimento da conta (e crie uma opção de menu para o usuário informar a nova taxa).
 
 Avalie se o método deve ser estático ou não.
+
+Teste suas alterações!
+Depois, faça o commit e sincronize suas alterações.
