@@ -101,10 +101,10 @@ Depois, faça o commit e sincronize suas alterações.
 
 ## Passo 5 - Tratando várias contas
 
-Na classe que trata o caixa eletrônico, crie um atributo para guardar uma coleção de contas (pode ser um vetor ou um ArrayList).
-- Essa coleção deve substituir o atributo criado no passo 2 para guardar uma única conta.
+Na classe que trata o caixa eletrônico, crie um atributo para guardar um vetor de contas (atenção: você deve usar um vetor e não um ArrayList).
+- O vetor deve substituir o atributo criado no passo 2 para guardar uma única conta.
 
-- Na opção de menu de criar contas, uma nova conta deve ser criada e acrescentada na coleção.
+- Na opção de menu de criar contas, uma nova conta deve ser criada e acrescentada no vetor.
 - Após a criação de uma conta, o programa deve exibir o número gerado para a conta de forma que o usuário saiba o número que deve usar nas demais operações.
 - Acrescente uma opção de menu chamada `Exibir contas` que exibe o número e o nome do titular de todas as contas.
 - E, claro, lembre-se também de alterar as demais opções de menu (consultar saldo, saque e depósito), pois o usuário terá agora que informar o número da conta sobre a qual deseja operar.
